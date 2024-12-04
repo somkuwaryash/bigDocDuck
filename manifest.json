@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "SumItUpduck",
+    "version": "1.0",
+    "description": "Summarize documents using Gemini Nano",
+    "permissions": ["activeTab", "storage", "sidePanel"],
+    "action": {
+        "default_title": "Open SumItUpduck"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "side_panel": {
+        "default_path": "popup.html"
+    }
+}

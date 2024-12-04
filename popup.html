@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BigDocDuck</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            width: 100%;
+            min-width: 380px;
+            max-width: 480px;
+            background: linear-gradient(135deg, #f6f9fc 0%, #eef2f7 100%);
+            font-family: system-ui, -apple-system, sans-serif;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            height: calc(100vh - 3rem);
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="p-6">
+    <div class="glass-card rounded-xl p-6">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-semibold">BigDocDuck</h2>
+            <span class="text-xs text-gray-500">document summarizer</span>
+        </div>
+        <textarea id="inputText" class="w-full h-48 p-4 rounded-lg border mb-4" placeholder="Paste your text here..."></textarea>
+        <select id="documentType" class="w-full p-2.5 border rounded-lg mb-4">
+            <option value="general">📄 General</option>
+            <option value="legal">⚖️ Legal Document</option>
+            <option value="finance">💰 Financial Report</option>
+            <option value="government">🏛️ Government Bill</option>
+        </select>
+        <input type="text" id="queryInput" class="w-full p-2.5 border rounded-lg mb-4" placeholder="What would you like to know about this document?">
+        <button id="summarizeBtn" class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Summarize</button>
+        <div id="modelStatus" class="hidden"></div>
+        <div id="result" class="result mt-4 p-4 bg-gray-50 rounded-lg"></div>
+        <div id="error" class="hidden"></div>
+    </div>
+    <script src="popup.js"></script>
+    <script src="prompt.js"></script>
+    <script src="doc.js"></script>
+    <script src="language.js"></script>
+</body>
+</html>
